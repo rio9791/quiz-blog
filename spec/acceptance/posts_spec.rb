@@ -1,14 +1,11 @@
 require 'acceptance/acceptance_helper'
 
-feature 'Posts', %q{
-  In order to keep my blog up to date
-  As a bloger
-  I want create, show, update and delete posts
-} do
+feature 'Posts' do
 
   scenario 'Blank slate' do
     visit posts_path
-    page.should have_content('No post is found.')
+    page.should have_content('No post is found. Go create your first post!')
+    page.should have_no_content('New Post')
   end
 
 end
